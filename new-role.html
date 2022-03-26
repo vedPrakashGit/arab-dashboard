@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <section class="left-section">
+      <div class="user-div">
+        <img src="images/user-circle-big.png" class="img-fluid" alt="User Image">
+        <p class="user-name">User Name</p>
+      </div>
+        <ul class="nav nav-pills flex-column dashboard-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#dashboard">
+              <div class="nav-link-wrapper">
+                <img src="images/home-purple.png" class="img-fluid purple-icon" alt="Home Icon">
+                <img src="images/home-white.png" class="img-fluid white-icon" alt="Home Icon">
+                <label class="mb-0 d-block">Dashboard</label>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#orders">
+              <div class="nav-link-wrapper">
+                <img src="images/orders-purple.png" class="img-fluid purple-icon" alt="Home Icon">
+                <img src="images/orders-white.png" class="img-fluid white-icon" alt="Home Icon">
+                <label class="mb-0 d-block">Orders</label>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#customers">
+              <div class="nav-link-wrapper">
+                <img src="images/customers-purple.png" class="img-fluid purple-icon" alt="Customer Icon">
+                <img src="images/customers-white.png" class="img-fluid white-icon" alt="Customer Icon">
+                <label class="mb-0 d-block">Customers</label>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#finance">
+              <div class="nav-link-wrapper">
+                <img src="images/finance-purple.png" class="img-fluid purple-icon" alt="Finance Icon">
+                <img src="images/finance-white.png" class="img-fluid white-icon" alt="Finance Icon">
+                <label class="mb-0 d-block">Finance</label>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#reports">
+              <div class="nav-link-wrapper">
+                <img src="images/reports-purple.png" class="img-fluid purple-icon" alt="Report Icon">
+                <img src="images/reports-white.png" class="img-fluid white-icon" alt="Report Icon">
+                <label class="mb-0 d-block">Reports</label>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="pill" href="#settings">
+               <div class="nav-link-wrapper">
+                <img src="images/settings-purple.png" class="img-fluid purple-icon" alt="Settings Icon">
+                <img src="images/settings-white.png" class="img-fluid white-icon" alt="Settings Icon">
+                <label class="mb-0 d-block">Settings</label>
+              </div>
+            </a>
+          </li>
+        </ul>
+    </section>
+
+    <section class="right-section">
+      <div class="container-fluid h-100">
+        <div class="row h-100">
+          <div class="col-sm-12 d-flex flex-column">
+            <div class="middle-section-wrapper padding-adjust">
+              <div class="heading-row justify-left padding-apply">
+                <div class="heading-bars">
+                  <h2 class="dashboard-heading">Settings</h2>
+                  <i class="fas fa-bars text-white"></i>
+                </div>
+              </div>
+            </div>
+
+            <section class="new-role-section">
+              <div class="new-role-container">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-8 offset-sm-2">
+                    <div class="new-role-inner">
+                      <div class="container">
+                        <div class="modal-header px-0 pt-0 pb-2">
+                          <h4 class="modal-title new-order-heading">New Role</h4>
+                          <div class="d-flex">
+                            <a type="button" class="close text-white">×</a>
+                          </div>
+                          </div>
+                        <div class="form-group row mt-4">
+                          <div class="col p-relative">
+                            <label class="text-white">Role Name</label>
+                            <input type="text" class="form-control modal-custom-input label-input" placeholder="Enter role name" required="">
+                          </div>
+                        </div>
+
+                        <h6 class="text-white text-center mt-4 mb-3">Choose the privileges</h6>
+
+                        <div class="privilege-div">
+                          <div class="form-group yellow-bg row align-items-center">
+                            <div class="col-sm-7">
+                              <label class="m-0 dark-blue-color py-2 medium-font font-normal">Dashboard</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input class="inp-cbx" id="cbx1" type="checkbox"/>
+                              <label class="cbx mb-0 mr-4" for="cbx1">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>View</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form-group yellow-bg row align-items-center">
+                            <div class="col-sm-7">
+                              <label class="m-0 dark-blue-color py-2 medium-font font-normal">Orders</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input class="inp-cbx" id="cbx2" type="checkbox"/>
+                              <label class="cbx mb-0 mr-4" for="cbx2">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>View</span>
+                              </label>
+
+                              <input class="inp-cbx" id="cbx3" type="checkbox"/>
+                              <label class="cbx mb-0" for="cbx3">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>Edit</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form-group yellow-bg row align-items-center">
+                            <div class="col-sm-7">
+                              <label class="m-0 dark-blue-color py-2 medium-font font-normal">Customers</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input class="inp-cbx" id="cbx4" type="checkbox"/>
+                              <label class="cbx mb-0 mr-4" for="cbx4">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>View</span>
+                              </label>
+
+                              <input class="inp-cbx" id="cbx5" type="checkbox"/>
+                              <label class="cbx mb-0" for="cbx5">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>Edit</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form-group yellow-bg row align-items-center">
+                            <div class="col-sm-7">
+                              <label class="m-0 dark-blue-color py-2 medium-font font-normal">Finance</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input class="inp-cbx" id="cbx6" type="checkbox"/>
+                              <label class="cbx mb-0 mr-4" for="cbx6">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>View</span>
+                              </label>
+
+                              <input class="inp-cbx" id="cbx7" type="checkbox"/>
+                              <label class="cbx mb-0" for="cbx7">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>Edit</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form-group yellow-bg row align-items-center">
+                            <div class="col-sm-7">
+                              <label class="m-0 dark-blue-color py-2 medium-font font-normal">Reports</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input class="inp-cbx" id="cbx8" type="checkbox"/>
+                              <label class="cbx mb-0 mr-4" for="cbx8">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>View</span>
+                              </label>
+
+                              <input class="inp-cbx" id="cbx9" type="checkbox"/>
+                              <label class="cbx mb-0" for="cbx9">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>Edit</span>
+                              </label>
+                            </div>
+                          </div>
+
+                           <div class="form-group yellow-bg row align-items-center">
+                            <div class="col-sm-7">
+                              <label class="m-0 dark-blue-color py-2 medium-font font-normal">Settings</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input class="inp-cbx" id="cbx10" type="checkbox"/>
+                              <label class="cbx mb-0 mr-4" for="cbx10">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>View</span>
+                              </label>
+
+                              <input class="inp-cbx" id="cbx11" type="checkbox"/>
+                              <label class="cbx mb-0" for="cbx11">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>Edit</span>
+                              </label>
+                            </div>
+                          </div>
+
+                           <div class="form-group yellow-bg row align-items-center">
+                            <div class="col-sm-7">
+                              <label class="m-0 dark-blue-color py-2 medium-font font-normal">Processing Orders</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input class="inp-cbx" id="cbx12" type="checkbox"/>
+                              <label class="cbx mb-0 mr-4" for="cbx12">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>View</span>
+                              </label>
+
+                              <input class="inp-cbx" id="cbx13" type="checkbox"/>
+                              <label class="cbx mb-0" for="cbx13">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>Edit</span>
+                              </label>
+                            </div>
+                          </div>
+
+                           <div class="form-group yellow-bg row align-items-center">
+                            <div class="col-sm-7">
+                              <label class="m-0 dark-blue-color py-2 medium-font font-normal">Add/Withdraw Balance</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input class="inp-cbx" id="cbx14" type="checkbox"/>
+                              <label class="cbx mb-0 mr-4" for="cbx14">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>View</span>
+                              </label>
+
+                              <input class="inp-cbx" id="cbx15" type="checkbox"/>
+                              <label class="cbx mb-0" for="cbx15">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>Edit</span>
+                              </label>
+                            </div>
+                          </div>
+
+                           <div class="form-group yellow-bg row align-items-center">
+                            <div class="col-sm-7">
+                              <label class="m-0 dark-blue-color py-2 medium-font font-normal">Logs</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input class="inp-cbx" id="cbx16" type="checkbox"/>
+                              <label class="cbx mb-0 mr-4" for="cbx16">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>View</span>
+                              </label>
+
+                              <input class="inp-cbx" id="cbx17" type="checkbox"/>
+                              <label class="cbx mb-0" for="cbx17">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>Edit</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div class="form-group mb-0 yellow-bg row align-items-center">
+                            <div class="col-sm-7">
+                              <label class="m-0 dark-blue-color py-2 medium-font font-normal">Add/Delete Customers</label>
+                            </div>
+                            <div class="col-sm-5">
+                              <input class="inp-cbx" id="cbx18" type="checkbox"/>
+                              <label class="cbx mb-0 mr-4" for="cbx18">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>View</span>
+                              </label>
+
+                              <input class="inp-cbx" id="cbx19" type="checkbox"/>
+                              <label class="cbx mb-0" for="cbx19">
+                                <span><svg width="12px" height="9px" viewbox="0 0 12 9">
+                                  <polyline points="1 5 4 8 11 1"></polyline></svg>
+                                </span>
+                                <span>Edit</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="text-center mt-4">
+                          <button type="submit" class="btn blue-btn">Add New Role</button>
+                        </div>
+
+                        <div class="mt-4">
+                          <div class="alert alert-success" id="">
+                            <button type="button" class="close dark">×</button>
+                            <strong>You have successfully added a new role.</strong>
+                          </div>
+                          <div class="alert alert-danger" id="">
+                            <button type="button" class="close dark">×</button>
+                            <strong>Sorry! there occured some problem.</strong>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/daterangepicker.js"></script>
+  </body>
+</html>

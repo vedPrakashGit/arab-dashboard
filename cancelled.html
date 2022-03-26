@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- <link rel="stylesheet" href="css/custom-rtl.css"> -->
+    <title>Customer</title>
+  </head>
+  <body>
+      <section class="left-section">
+        <div class="user-div">
+          <img src="images/user-circle-big.png" class="img-fluid" alt="User Image">
+          <p class="user-name">Customer Name</p>
+        </div>
+          <ul class="nav nav-pills flex-column dashboard-nav">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="pill" href="#orders">
+                <div class="nav-link-wrapper">
+                  <img src="images/orders-purple.png" class="img-fluid purple-icon" alt="Home Icon">
+                  <img src="images/orders-white.png" class="img-fluid white-icon" alt="Home Icon">
+                  <label class="mb-0 d-block">My Orders</label>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="pill" href="#customers">
+                <div class="nav-link-wrapper">
+                  <img src="images/customers-purple.png" class="img-fluid purple-icon" alt="Customer Icon">
+                  <img src="images/customers-white.png" class="img-fluid white-icon" alt="Customer Icon">
+                  <label class="mb-0 d-block">My Account</label>
+                </div>
+              </a>
+            </li>
+          </ul>
+      </section>
+
+      <section class="right-section">
+        <div class="tab-content">
+          <div class="tab-pane active" id="orders">
+            <div class="container-fluid h-100">
+              <div class="row h-100">
+                <div class="col-sm-12 d-flex align-items-center flex-column orders-container">
+                  <div class="middle-section-wrapper padding-adjust">
+                    <div class="language-btns-div mb-4">
+                      <div class="language-btns">
+                        <a href="cancelled.html" class="nav-link lang-btn lang-btn-en activeLang">English</a>
+                        <a href="cancelled-ar.html" class="nav-link lang-btn lang-btn-ar">Arabic</a>
+                      </div>
+                    </div>
+
+                    <div class="heading-row padding-apply">
+                      <div class="heading-bars">
+                        <h2 class="dashboard-heading">Orders</h2>
+                        <i class="fas fa-bars text-white"></i>
+                      </div>
+                      <div class="selection-boxes order-tab-selection-box">
+                        <div class="orders-tab-statistics">
+                          <div class="order-statistic-box available-balance">
+                            <h2>546</h2>
+                            <p class="mb-0">Total active orders</p>
+                          </div>
+
+                          <div class="d-flex align-items-center new-order-div">
+                            <a href="#" class="nav-link new-order-link" data-toggle="modal" data-target="#newOrderWindow">
+                              <img src="images/plus-icon.png" class="img-fluid" alt="Plus Icon">
+                              <p class="mb-0">New Order</p>
+                            </a>
+
+                            <div class="refunded-cancelled-btns">
+                              <a href="refunded.html" class="btn pink-btn refunded-btn">
+                                <img src="images/refunded-icon.png" class="img-fluid" alt="Refund Icon">
+                                <span>Refunded</span>
+                              </a>
+                              <a href="cancelled.html" class="btn pink-btn">
+                                <img src="images/cancelled-icon.png" class="img-fluid" alt="Cancel Icon">
+                                <span>Cancelled</span>
+                              </a>
+                            </div>                            
+
+                              <a href="archived.html" class="btn pink-btn archived-btn">
+                                <i class="fas fa-archive"></i> <span>Archived</span>
+                              </a>
+                            
+                          </div>
+                        </div>
+
+                        <div class="all-input-fields">
+                          <div class="form-group search-input-group mr-10-mob">
+                            <input type="text" class="dashboard-search-input form-control" placeholder="Search">
+                          </div>
+                          <div class="form-group select-state-form-group">
+                            <select class="form-control select-tag" id="state">
+                              <option value="0" selected>Status</option>
+                              <option>All</option>
+                              <option>New</option>
+                              <option>Process</option>
+                              <option>Approve</option>
+                              <option>Purchase</option>
+                              <option>Warehouse</option>
+                              <option>Shipped</option>
+                              <option>Arrived</option>
+                              <option>Delivered</option>
+                            </select>
+                          </div>
+                          <div class="form-group mr-10-mob">
+                            <select class="form-control select-tag" id="area">
+                              <option value="0" selected>Warehouse</option>
+                              <option>India</option>
+                              <option>China</option>
+                              <option>Bangladesh</option>
+                              <option>Russia</option>
+                            </select>
+                          </div>
+                          <div class="form-group branch-form-group">
+                             <select class="form-control select-tag" id="area">
+                              <option value="0" selected>Branch</option>
+                              <option>Erbil</option>
+                              <option>Dohuk</option>
+                              <option>Baghdad</option>
+                              <option>Mosul</option>
+                              <option>Karkh</option>
+                              <option>Sadr City</option>
+
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <input type="text" name="datefilter" class="form-control dateRange" placeholder="Date from/to">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dark-portion-wrapper responsive-adjust h-100">
+                    <div class="dark-portion responsive-adjust h-100">
+                      <div class="main-table-area responsive-adjust h-100">
+
+                        <h4 class="text-center table-heading">Cancelled Orders</h4>
+                          
+                        <div class="orders-table-div">
+                              <table class="table table-hover orders-table">
+                              <thead>
+                                <tr>
+                                  <th scope="col"><input type="checkbox" class="upperCheck"></th>
+                                  <th class="text-center">SN</th>
+                                  <th class="text-center">Order No</th>
+                                  <th class="text-center">Quantity</th>
+                                  <th class="text-center">Cost</th>
+                                  <th class="text-center">Shipment</th>
+                                  <th class="text-center">Branch</th>
+                                  <th class="text-center">Warehouse</th>
+                                  <th class="text-center">Cancelled Date</th>
+                                  <th>Notes</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td><input type="checkbox"> </td>
+                                  <td class="text-center">1</td>
+                                  <td class="orders-td text-center">
+                                    <div class="action-div">
+                                      <label class="order-id mb-0">CHE12345</label>
+                                      <ul class="actions-ul">
+                                        <li>
+                                          <a href="#" class="action-link" data-toggle="modal" data-target="#orderDetails">
+                                            <i class="fas fa-align-left action-icon"></i>
+                                            <span class="action-text">Details</span>
+                                          </a>
+                                        </li>
+                                        <li>
+                                          <a href="https://www.alibaba.com/" target="_blank" class="action-link">
+                                            <i class="fas fa-link action-icon"></i> 
+                                            <span class="action-text">Link</span></a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                    
+                                  </td>
+                                  <td class="text-center">2</td>
+                                  <td class="text-center">52.15 $</td>
+                                  <td class="text-center">Sea</td>
+                                  <td class="text-center">Erbil</td>
+                                  <td class="text-center"><img src="images/china-flag.png" class="img-fluid" alt="China Flag"> China</td>
+                                  <td class="text-center">25/05/2020</td>
+                                  <td>The color as picture</td>
+                                </tr>
+                                <tr>
+                                  <td><input type="checkbox"> </td>
+                                  <td class="text-center">2</td>
+                                  <td class="orders-td text-center"></td>
+                                  <td class="text-center"></td>
+                                  <td class="text-center"></td>
+                                  <td class="text-center"></td>
+                                  <td class="text-center"></td>
+                                  <td class="text-center"></td>
+                                  <td class="text-center"></td>
+                                  <td class="text-center"></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
+                            </table>
+
+                            <div class="text-center py-2">
+                              <a href="customer.html" class="btn profile-back-link">Back</a>
+                            </div>
+                          </div>
+                           <div class="all-badge-wrapper">
+                              <div class="single-order-badge">
+                                <div class="order-details-div radius-35 badge-order-details-div">
+                                  <div class="badge-row badge-first-row">
+                                    <h4 class="badge-order-no mb-0 badge-order-id">CHE1000254</h4>
+                                    <div class="d-flex">
+                                      <p class="badge-product-destination mb-0">
+                                        <span class="from-place">China</span>
+                                        <i class="fas fa-arrow-right place-arrow"></i>
+                                        <span class="to-place">Erbil</span> 
+                                      </p>
+                                      <div class="badge-order-ship-type">
+                                        <p class="ship-type-div">
+                                          <i class="fas fa-plane aeroplane-icon"></i> 
+                                          <label class="mb-0">Air</label>
+                                        </p>                                      
+                                      </div>
+                                    </div>
+                                    
+                                  </div>
+                                  <div class="badge-row badge-second-row">
+                                    <h5 class="badge-customer-name mb-0">Salar Nazar</h5>                     
+                                  </div>
+                                  <div class="badge-row">
+                                    <p class="badge-product mb-0">Nike Sports Trainers</p>
+                                    <label for="" class="badge-product-qty mb-0">Qty: 2</label>
+                                  </div>
+                                  <div class="badge-row badge-order-notes">
+                                    <p class="mb-0">Notes: The color as picture.</p>
+                                  </div>
+                                </div>
+
+                                <div class="badge-editable-div w-100 d-none">
+
+                                <div class="tab-content h-inherit">
+                                  <div id="editDetail8" class="tab-pane active h-100">
+                                    <div class="order-details-div">
+                                    <div class="badge-row badge-first-row">
+                                      <h4 class="badge-order-no mb-0">CHE1000254</h4>
+                                      <h5 class="badge-customer-name mb-0">Salar Nazar</h5> 
+                                    </div>
+
+                                    
+                                    <div class="badge-row badge-second-row">
+                                      <div class="d-flex">
+                                        <div class="form-group mb-0 mr-3">
+                                          <label for="" class="fs-12 mb-0">From</label>
+                                          <label class="yellow-clr">China</label>
+                                        </div>
+                                        <div class="form-group mb-0 ml-2">
+                                          <label for="" class="fs-12 mb-0">To</label>
+                                          <label class="yellow-clr">Erbil</label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="badge-row badge-second-row mt-0">
+                                        <div>
+                                        <label for="" class="fs-12 mb-0">Shipping</label>
+                                        <label class="yellow-clr">Air</label>
+                                        </div>
+                                        <div class="form-group mb-0">
+                                          <label for="" class="fs-12 mb-0">Qty</label>
+                                          <label class="yellow-clr">2</label>
+                                        </div>         
+                                      </div>
+                                      <div class="badge-row">
+                                        <div class="row">
+                                          <div class="col">
+                                            <div class="form-group mb-0">
+                                              <label class="fs-12 mb-0">Size</label>
+                                              <label class="yellow-clr">Large</label>
+                                            </div>
+                                          </div>
+                                          <div class="col">
+                                            <div class="form-group mb-0">
+                                              <label class="fs-12 mb-0">Color</label>
+                                              <label class="yellow-clr">White</label>
+                                            </div>
+                                          </div>
+                                          <div class="col">
+                                            <div class="form-group mb-0">
+                                              <label for="" class="fs-12 mb-0">Insuranced</label>
+                                              <label class="yellow-clr">Yes</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="badge-row badge-second-row">
+                                        <div class="form-group w-100 mb-0">
+                                          <label class="modal-order-link fs-12 mb-0">Order link</label>
+                                          <label class="yellow-clr">www.aliexpress.com</label>
+                                        </div>
+                                      </div>
+                                      <div class="badge-row badge-second-row mt-0">
+                                        <div class="form-group w-100 mb-0">
+                                          <label class="fs-12 mb-0">Product Name</label>
+                                          <label for="" class="yellow-clr">Nike Sports Trainers</label>
+                                        </div>
+                                      </div>
+                                      <div class="badge-row badge-order-notes">                               
+                                        <div class="form-group mb-0 w-100">
+                                          <p class="yellow-clr">Notes: The color as picture.</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                                <div class="order-options-div">
+                                  <ul class="nav nav-tabs flex-column badge-order-actions-ul" role="tablist">
+                                    <li class="nav-item"><a href="#editDetail8" data-toggle="tab" class="nav-link active">Details</a></li>
+                                    <li class="nav-item"><a href="https://www.alibaba.com" target="_blank" class="nav-link badge-order-link">Link</a></li>
+                                    <li class="nav-item"><a href="#" class="nav-link cancel-badge"><i class="fas fa-times"></i> </a></li>
+                                  </ul>
+                                </div>
+                                </div>
+
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="customers">
+            <div class="container-fluid h-100">
+              <div class="row h-100">
+                
+                <div class="col-sm-12 orders-container">
+                  <div class="middle-section-wrapper padding-adjust">
+                    <div class="language-btns-div mb-4">
+                      <div class="language-btns">
+                        <a href="customer.html" class="nav-link lang-btn lang-btn-en">English</a>
+                        <a href="customer-ar.html" class="nav-link lang-btn lang-btn-ar activeLang">عربى</a>
+                      </div>
+                    </div>
+                    
+                    <div class="heading-row padding-apply">
+                      <div class="heading-bars add-margin">
+                        <h2 class="customer-profile-heading">Jane Doe's Account</h2>
+                        <i class="fas fa-bars text-white"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dark-portion-wrapper">
+                    <div class="dark-portion dark-blue-bg">
+                      <div class="main-table-area blue-bg">
+                        <div class="customer-log-wrapper">
+                          <div class="row">
+                            <div class="col-sm-3">
+                              <div class="customer-img-div text-center">
+                                <img src="images/profile-img.png" class="img-fluid customer-img" alt="Avatar Image">
+                              </div>
+                              <div class="d-flex justify-content-end">
+                                <div class="custom-file profile-photo-upload">
+                                    <input type="file" class="custom-file-input" name="photo" id="customerPhoto">
+                                    <label class="custom-file-label customer-profile-photo-label" for="customerPhoto"></label>
+                                </div>
+                              </div>                            
+                              <div class="order-statistic-box mt-3 mb-16-mob">
+                                <h2>34.32 $</h2>
+                                <p class="mb-0">Customer Wallet</p>
+                              </div>
+                            </div>
+                            <div class="col-sm-8">
+                              <div class="form-group row">
+                                <div class="col-sm-6 mb-16-mob">
+                                  <span class="span-label">Name</span>
+                                  <div class="control-group">
+                                    <label class="control-label mb-0">
+                                        <p>Jane Doe<i class="icon-star"></i></p>
+                                    </label>
+                                    <input type="text" class="edit-input" placeholder="Jane Doe" />
+                                    <div class="controls">
+                                      <a class="edit" href="#">
+                                        <img src="images/edit-pen-icon-white.png" alt="Edit Pen Icon">
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                  <span class="span-label">City</span>
+                                  <div class="control-group">
+                                    <label class="control-label mb-0">
+                                        <p>Erbil<i class="icon-star"></i></p>
+                                    </label>
+                                    <input type="text" class="edit-input" placeholder="Erbil" />
+                                    <div class="controls">
+                                      <a class="edit" href="#">
+                                        <img src="images/edit-pen-icon-white.png" alt="Edit Pen Icon">
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>                                
+                                
+                              </div>
+
+                              <div class="form-group row">
+                                <div class="col-sm-6 mb-16-mob">
+                                  <span class="span-label">Gender</span>
+                                  <div class="p-relative">
+                                    <select class="form-control edit-gender-select" id="editGender">
+                                      <option value="0" selected="">Male</option>
+                                      <option>Female</option>
+                                    </select>
+                                    <i class="fas fa-caret-down select-caret"></i>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <span class="span-label">Street</span>
+                                  <div class="control-group">
+                                    <label class="control-label mb-0">
+                                        <p>100 M Street<i class="icon-star"></i></p>
+                                    </label>
+                                    <input type="text" class="edit-input" placeholder="100 M Street" />
+                                    <div class="controls">
+                                      <a class="edit" href="#">
+                                        <img src="images/edit-pen-icon-white.png" alt="Edit Pen Icon">
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <div class="col-sm-6 mb-16-mob">
+                                  <span class="span-label">Phone</span>
+                                  <div class="control-group">
+                                    <label class="control-label mb-0">
+                                        <p>009647504563<i class="icon-star"></i></p>
+                                    </label>
+                                    <input type="text" class="edit-input" placeholder="009647504563" />
+                                    <div class="controls">
+                                      <a class="edit" href="#">
+                                        <img src="images/edit-pen-icon-white.png" alt="Edit Pen Icon">
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                
+                                <div class="col-sm-6">
+                                  <span class="span-label">Quarter</span>
+                                  <div class="control-group">
+                                    <label class="control-label mb-0">
+                                        <p>Italian Village 2<i class="icon-star"></i></p>
+                                    </label>
+                                    <input type="text" class="edit-input" placeholder="Italian Village 2" />
+                                    <div class="controls">
+                                      <a class="edit" href="#">
+                                        <img src="images/edit-pen-icon-white.png" alt="Edit Pen Icon">
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group row align-items-center">
+                                <div class="col-sm-6 mb-16-mob">
+                                  <span class="span-label">Email</span>
+                                  <div class="control-group">
+                                    <label class="control-label mb-0">
+                                        <p>jane_doe@test.com<i class="icon-star"></i></p>
+                                    </label>
+                                    <input type="text" class="edit-input" placeholder="jane_doe@test.com"/>
+                                    <div class="controls">
+                                      <a class="edit" href="#">
+                                        <img src="images/edit-pen-icon-white.png" alt="Edit Pen Icon">
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                  <span class="span-label">Province</span>
+                                  <div class="control-group">
+                                    <label class="control-label mb-0">
+                                        <p>Erbil<i class="icon-star"></i></p>
+                                    </label>
+                                    <input type="text" class="edit-input" placeholder="Italian Village 2" />
+                                    <div class="controls">
+                                      <a class="edit" href="#">
+                                        <img src="images/edit-pen-icon-white.png" alt="Edit Pen Icon">
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>                                
+                              </div>
+
+                              <div class="form-group row align-items-center">
+                                <div class="col-sm-6 mb-16-mob">
+                                  <span class="span-label">Account Status</span>
+                                  <div class="p-relative">
+                                    <select class="form-control edit-gender-select" id="editAccType">
+                                      <option value="0" selected="">Active</option>
+                                      <option>Inactive</option>
+                                    </select>
+                                    <i class="fas fa-caret-down select-caret"></i>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6 mb-16-mob">
+                                  <span class="span-label">Account Type</span>
+                                  <div class="p-relative">
+                                    <select class="form-control edit-gender-select" id="editAccType">
+                                      <option value="0" selected="">Normal Account</option>
+                                      <option>Business Account</option>
+                                    </select>
+                                    <i class="fas fa-caret-down select-caret"></i>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group row align-items-center">
+                                
+                                <div class="col-sm-6">
+                                  <span class="span-label">Password</span>
+                                  <div class="control-group">
+                                    <label class="control-label mb-0">
+                                        <p>****************<i class="icon-star"></i></p>
+                                    </label>
+                                    <input type="text" class="edit-input" placeholder="****************"/>
+                                    <div class="controls">
+                                      <a class="edit" href="#">
+                                        <img src="images/edit-pen-icon-white.png" alt="Edit Pen Icon">
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6 text-center-mob">
+                                  <a href="#" class="profile-reset-link">Reset</a>
+                                </div>
+                              </div>
+                              
+                            </div>
+                            <div class="col-sm-1 text-right">
+                            </div>
+                          </div>
+
+                          <div class="white-area">
+                            <div class="row align-items-center">
+                              <div class="col-sm-6 text-center-mob">
+                                <h5 class="customer-log-heading">Customer Log</h5>
+                                <div class="prints-icon">
+                                  <a href="#">
+                                    <img src="images/file-icon.png" alt="File Icon">
+                                  </a>
+                                  <a href="#">
+                                    <img src="images/print-icon.png" class="print-icon" alt="File Icon">
+                                  </a>
+                                  <a href="#">
+                                    <img src="images/excel-icon.png" alt="File Icon">
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="col-sm-6 customer-table-type-col">
+                                <div class="customer-table-type-col-inner">
+                                  <div class="customer-table-type-buttons">
+                                    <div class="customer-table-type normal-account">
+                                      <input type="radio" class="account-radio" name="showType" id="custOrders" checked="">
+                                      <label for="custOrders" class="account-label normal-label"><span>Orders</span></label>
+                                    </div>
+                                    <div class="customer-table-type normal-account">
+                                      <input type="radio" class="account-radio" name="showType" id="custTransactions">
+                                      <label for="custTransactions" class="account-label business-label"><span>Transactions</span></label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="table-responsive customer-orders-table">
+                              <table class="table orders-table">
+                                <thead>
+                                  <tr>                                
+                                    <th class="text-center">Order ID <img src="images/search-icon.png" class="table-search-icon" alt="Search Icon"></th>
+                                    <th class="text-center">Cost</th>
+                                    <th class="text-center">Status 
+                                      <img src="images/caret-down.png" class="table-caret-down" alt="Caret Down"></th>
+                                    <th class="text-center">Warehouse 
+                                      <img src="images/caret-down.png" class="table-caret-down" alt="Caret Down"></th>
+                                    <th class="text-center">Date 
+                                      <img src="images/caret-down.png" class="table-caret-down" alt="Caret Down"></th>
+                                    <th class="text-center">Note</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="orders-td text-center">CHE00021</td>
+                                    <td class="text-center">23.12 $</td>
+                                    <td class="orders-td text-center">Purchased</td>
+                                    <td class="text-center">
+                                      <label class="transaction-balance-bg">China</label>
+                                    </td>
+                                    <td class="text-center">
+                                      <label class="transaction-date-bg">12/04/2020</label>
+                                    </td>
+                                    <td class="text-center">
+                                      <label class="notes-bg">This size is in inches</label>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="table-responsive customer-transactions-table">
+                              <table class="table orders-table">
+                                <thead>
+                                  <tr>                                
+                                    <th class="text-center">Transaction <img src="images/search-icon.png" class="table-search-icon" alt="Search Icon"></th>
+                                    <th class="text-center">Amount</th>
+                                    <th class="text-center">Status
+                                      <img src="images/caret-down.png" class="table-caret-down" alt="Caret Down">
+                                    </th>
+                                    <th class="text-center">Balance</th>
+                                    <th class="text-center">Date
+                                      <img src="images/caret-down.png" class="table-caret-down" alt="Caret Down">
+                                    </th>
+                                    <th class="text-center">Order ID
+                                      <img src="images/caret-down.png" class="table-caret-down" alt="Caret Down">
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="orders-td text-center">2098734</td>
+                                    <td class="text-center">23.12 $</td>
+                                    <td class="orders-td text-center">Paid</td>
+                                    <td class="text-center">
+                                      <label class="transaction-balance-bg">76.88 $</label>
+                                    </td>
+                                    <td class="text-center">
+                                      <label class="transaction-date-bg">12/04/2020</label> 
+                                    </td>
+                                    <td class="orders-td text-center">CHE00021</td>
+                                  </tr>
+
+                                  <tr>
+                                    <td class="orders-td text-center">2098731</td>
+                                    <td class="text-center">100.00 $</td>
+                                    <td class="orders-td text-center">Deposit</td>
+                                    <td class="text-center">
+                                      <label class="transaction-balance-bg">100.00 $</label>
+                                    </td>
+                                    <td class="text-center">
+                                      <label class="transaction-date-bg">12/04/2020</label> 
+                                    </td>
+                                    <td class="orders-td text-center">...</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div><!-- 
+                            <div class="text-center py-2 border-top">
+                              <a href="javascript:void(0)" class="btn profile-back-link">Back</a>
+                            </div> -->
+                          </div>
+
+                        </div>
+                      </div>
+                     </div>
+                   </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </section>
+
+<div class="modal fade" id="newOrderWindow">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title new-order-heading">New Order</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+        <div class="row">
+          <div class="col-sm-7">
+              <div class="row select-heading-row">
+                <div class="col-sm-5">
+                  <h5 class="select-heading">From <span style="color:red;">*</span></h5>
+                  <div class="form-group">
+                    <!-- <select multiple class="form-control text-center select-city" id="fromCity" name="fromCity" onchange=>
+                      <option>China</option>
+                      <option>USA</option>
+                      <option>UK</option>
+                      <option>Germany</option>
+                    </select> -->
+                    <div class="place-radio-group">
+                      <div class="radio-button china-radio">
+                        <input type="radio" class="modal-custom-radio" name="fromPlace" id="china" checked="">
+                        <label for="china" class="mb-0">China</label>
+                      </div>
+                      <div class="radio-button">
+                        <input type="radio" class="modal-custom-radio" name="fromPlace" id="usa">
+                        <label for="usa" class="mb-0">USA</label>
+                      </div>
+                      <div class="radio-button">
+                        <input type="radio" class="modal-custom-radio" name="fromPlace" id="uk">
+                        <label for="uk" class="mb-0">UK</label>
+                      </div>
+                      <div class="radio-button germany-radio">
+                        <input type="radio" class="modal-custom-radio" name="fromPlace" id="germany">
+                        <label for="germany" class="mb-0">Germany</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-5">
+                  <h5 class="select-heading">To <span style="color:red;">*</span></h5>
+                  <div class="form-group">
+                   <!--  <select multiple class="form-control text-center select-city" id="toCity" name="toCity">
+                      <option>Erbil</option>
+                      <option>Suleimania</option>
+                      <option>Duhok</option>
+                      <option>Baghdad</option>
+                    </select> -->
+                     <div class="place-radio-group">
+                        <div class="radio-button erbil-radio">
+                          <input type="radio" class="modal-custom-radio" name="toPlace" id="erbil" checked="">
+                          <label for="erbil" class="mb-0">Erbil</label>
+                        </div>
+                        <div class="radio-button">
+                          <input type="radio" class="modal-custom-radio" name="toPlace" id="suleimania">
+                          <label for="suleimania" class="mb-0">Suleimania</label>
+                        </div>
+                        <div class="radio-button">
+                          <input type="radio" class="modal-custom-radio" name="toPlace" id="duhok">
+                          <label for="duhok" class="mb-0">Duhok</label>
+                        </div>
+                        <div class="radio-button baghdad-radio">
+                          <input type="radio" class="modal-custom-radio" name="toPlace" id="baghdad">
+                          <label for="baghdad" class="mb-0">Baghdad</label>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="radio-button-group">
+              <div class="radio-button sea-radio">
+                <input type="radio" class="modal-custom-radio" name="shipType" id="sea1" checked>
+                <label for="sea1" class="mb-0">Sea</label>
+              </div>
+              <div class="radio-button air-radio">
+                <input type="radio" class="modal-custom-radio" name="shipType" id="air1">
+                <label for="air1" class="mb-0">Air</label>
+              </div>
+              <div class="radio-button land-radio">
+                <input type="radio" class="modal-custom-radio" name="shipType" id="land1">
+                <label for="land1" class="mb-0">Land</label>
+              </div>
+            </div>
+
+            <div class="insurance-div">
+              <div class="insurance-text">
+                <h3>Add Insurance</h3>
+                <label class="insurance-label"><i> Extra fee may apply</i></label>
+              </div>
+              <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input" id="insuranceCheck" name="example">
+                <label class="custom-control-label" for="insuranceCheck"></label>
+              </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-sm-7">
+            <div class="form-group">
+            <input type="text" class="form-control modal-custom-input" placeholder="Product Name">
+          </div>
+          <div class="form-group p-relative">
+            <input type="text" class="form-control modal-custom-input label-input" id="productLink" placeholder="Product Link *">
+            <!-- <label for="productLink" class="placeholder-label">Product Link</label> -->
+          </div>
+          <div class="form-group row">
+            <div class="col">
+              <input type="text" class="form-control modal-custom-input" placeholder="Size">
+            </div>
+            <div class="col">
+              <input type="text" class="form-control modal-custom-input" placeholder="Color">
+            </div>
+            <div class="col p-relative">
+              <input type="number" class="form-control modal-custom-input label-input" id="productQty" placeholder="Quantity *">
+              <!-- <label for="productQty" class="placeholder-label extra-pos">Quantity</label> -->
+            </div>                
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="notes-and-file">
+              <textarea name="" id="" cols="30" rows="4" placeholder="Notes" class="form-control"></textarea>
+              <div class="custom-attach-file">
+                <ul class="nav" id="fileList">
+                </ul>
+                <div class="custom-file attach-file">
+                    <input type="file" class="custom-file-input" multiple="multiple" name="photo" id="customFile">
+                    <label class="custom-file-label" for="customFile"></label>
+                </div>
+                <p class="attach-file-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3 pt-4">
+          <div class="col-sm-12 text-center">
+            <button type="submit" class="btn blue-btn">Submit</button>
+          </div>
+        </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="orderDetails">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title new-order-heading">Order Details</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">    
+
+        <div class="row">
+          <div class="col-sm-6">
+            <label class="modal-order-id yellow-clr">CHE12345</label>
+            <label class="modal-customer-name yellow-clr">Salar Nazar</label>
+          </div>
+          <div class="col-sm-6 text-right">
+              <label class="modal-order-destination text-white control-label">China</label>
+              <i class="fas fa-arrow-right place-arrow"></i>
+
+              <label class="modal-order-destination text-white control-label"> Erbil</label>
+              <label class="modal-shipping-type control-label"> <i class="fas fa-plane aeroplane-icon"></i>Air</label>
+            </div>
+          </div>
+
+        <div class="row mt-3">
+          <div class="col-sm-6">
+            <div class="order-pricing-col"> 
+              <label class="modal-order-link text-white">Order link</label>
+              <label class="modal-product-link control-label"><a href="www.aliexpress.com">www.aliexpress.com</a></label>
+            </div>
+          </div>
+          <div class="col-sm-6 text-right">
+            <div class="order-pricing-col content-end">
+              <label class="modal-order-link text-white">Product Name</label>
+              <label class="modal-product-name yellow-clr control-label">Children Toys</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-sm-2">
+            <div class="order-pricing-col">
+            <label class="modal-order-link text-white">Qty</label>
+              <label class="modal-small-order-details yellow-clr control-label">25</label>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="order-pricing-col">
+              <label class="modal-order-link text-white">Size</label>
+                <label class="modal-small-order-details yellow-clr control-label">Large</label>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="order-pricing-col">
+              <label class="modal-order-link text-white">Color</label>
+              <label class="modal-small-order-details yellow-clr control-label">Green</label>
+              </div>
+            </div>
+            <div class="col-sm-4 text-right">
+              <div class="order-pricing-col content-end">
+                <label class="modal-order-link text-white">Insuranced</label>
+                <label class="modal-small-order-details yellow-clr control-label">Yes</label>
+            </div>
+          </div>
+        </div>        
+
+        <div class="pricing-row mt-3">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="customer-notes-div">
+                <div class="order-pricing-col">
+                  <label class="text-white mr-2">Customer Notes:</label>
+                    <label class="customer-notes-label yellow-clr control-label">The color as picture.</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/daterangepicker.js"></script>
+
+  <script>
+    var bars = document.querySelectorAll('.fa-bars');
+    var leftSection = document.querySelector('.left-section');
+    Array.from(bars).forEach(v => v.addEventListener('click', function(e){
+      e.preventDefault();
+        leftSection.classList.toggle('left-zero');
+        v.classList.toggle('fa-times');
+
+        let navLinks = leftSection.querySelectorAll('.nav-link');
+        for(let i = 0; i < navLinks.length; i++){
+          navLinks[i].addEventListener('click', function(ev){
+            ev.preventDefault();
+            leftSection.classList.remove('left-zero');
+            v.classList.remove('fa-times');
+          })
+        }
+    }));
+
+    $(function(){
+
+      $('input[name="datefilter"]').daterangepicker({
+        autoUpdateInput: false,
+          locale: {
+            format: 'MM/DD/YYYY',
+            cancelLabel: 'Clear'
+          }
+      });
+
+      $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+      $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+      });
+
+      $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+          $(this).val('');
+      });
+
+      $('.custom-control-label').click(function(){
+        if($('#insuranceCheck').is(':checked')){
+          $('.insurance-label').hide();
+        }else{
+          $('.insurance-label').show();
+        }
+      });
+
+
+      $('.upperCheck').each(function(){
+        $(this).click(function(){
+        if($(this).is(':checked')){
+          $(this).parents('.orders-table').find('input[type=checkbox]').prop('checked', $(this).prop('checked'));
+          }else{
+            $(this).parents('.orders-table').find('input[type=checkbox]').prop('checked', false);
+          }
+        })
+      });
+
+      $('#custTransactions').click(function(){
+        if($(this).is(':checked')){
+          $('.customer-orders-table').hide();
+          $('.customer-transactions-table').show();
+          }
+      });
+      $('#custOrders').click(function(){
+        if($(this).is(':checked')){
+          $('.customer-orders-table').show();
+          $('.customer-transactions-table').hide();
+          }
+      });
+   
+      $('a.edit').click(function () {
+          let editParent = $(this).parents('.control-group');
+          editParent.find('label').hide();
+          editParent.find('.edit-input').show().focus();
+          $(this).css('pointer-events', 'none');
+      });
+      
+      $('.edit-input').focusout(function() {
+          let editParent = $(this).parents('.control-group');
+          $(this).hide();
+          editParent.find('label').show();
+          $('a.edit').css('pointer-events', 'all');
+          $('a.edit').children().removeClass('grayscale');
+      });
+
+      $('.profile-back-link').click(function(){
+        $('.customer-list-col').show();
+        $('.customer-profile-col').hide();
+      })
+
+
+      $('.badge-order-id').click(function(){
+        $(this).parents('.badge-order-details-div').addClass('d-none');
+        $(this).parents('.badge-order-details-div').siblings('.badge-editable-div').removeClass('d-none').addClass('d-flex');
+      })
+
+       $('.cancel-badge').click(function(e){
+        e.preventDefault();
+        $(this).parents('.badge-editable-div').addClass('d-none').removeClass('d-flex');
+        $(this).parents('.single-order-badge').find('.badge-order-details-div').removeClass('d-none');
+      })
+
+    });
+
+    $(function(){
+
+        var $orderId = $('.order-id');
+
+         $orderId.on('click', function(ev){
+          ev.preventDefault();
+          var actionUl = $(this).siblings('.actions-ul');          
+          $('.actions-ul').not($(actionUl)).hide();
+          actionUl.toggle();
+
+        });
+
+         $orderId.on('mouseup', function(ev){
+          ev.preventDefault();
+          ev.stopPropagation();
+        });
+
+          $(document).on("mouseup", function (e) {
+            let $actionUl = $orderId.siblings('.actions-ul');
+            if(!$actionUl.is(e.target) && $actionUl.has(e.target).length === 0) {
+            $actionUl.hide();
+          }
+        }); 
+            
+        });
+  </script>
+  </body>
+</html>
